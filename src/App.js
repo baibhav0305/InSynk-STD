@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import MovieContainer from "./components/MovieContainer";
+import Topbar from "./components/Topbar";
 
-function App() {
+const Parent = styled.div`
+  background-color: white;
+  z-index: -1;
+`;
+
+const AppCont = styled.div`
+  width: 79%;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Parent id="parent">
+      <AppCont>
+        <Topbar />
+        <MovieContainer />
+      </AppCont>
+    </Parent>
   );
-}
+};
 
 export default App;
